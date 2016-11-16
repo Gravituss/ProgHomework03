@@ -15,7 +15,7 @@ public class AmazonSearchResultsPage {
     @FindBy(xpath = "//*[@class='leftNavGoBtn']")
     private WebElement goBtn;
 
-    public void setPriceRange (int i, int j){
+    public void setPriceRange(int i, int j){
         String stLow = Integer.toString(i);
         lowPriceField.sendKeys(stLow);
         String stHigh = Integer.toString(j);

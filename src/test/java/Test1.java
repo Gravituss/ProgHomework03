@@ -2,6 +2,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.PageFactory;
 import pages.AmazonMainPage;
+import pages.AmazonSearchResultsPage;
 
 import java.util.concurrent.TimeUnit;
 
@@ -15,8 +16,10 @@ public class Test1 {
         driver.get("http://amazon.com");
 
         AmazonMainPage amazonMainPage = PageFactory.initElements(driver, AmazonMainPage.class);
+        AmazonSearchResultsPage amazonSearchResultsPage = PageFactory.initElements(driver, AmazonSearchResultsPage.class);
 
         amazonMainPage.searchGood("Google Nexus");
+        amazonSearchResultsPage.setPriceRange(200, 250);
 
 
 
