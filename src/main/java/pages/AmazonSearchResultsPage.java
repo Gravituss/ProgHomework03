@@ -19,12 +19,6 @@ public class AmazonSearchResultsPage {
     private WebElement goodPriceSpan;
 
 
-
-
-
-
-
-
     public void setPriceRange(int i, int j){
         String stLow = Integer.toString(i);
         lowPriceField.sendKeys(stLow);
@@ -33,6 +27,23 @@ public class AmazonSearchResultsPage {
         goBtn.click();
 
 
+    }
+
+    public Integer getIntFromWebElement(WebElement weToInt){
+        Integer result = 0;
+        String st = weToInt.getText();
+        String to = "";
+        for(int i = 0; i < st.length(); i++){
+            if(Character.isDigit(st.charAt(i))){
+                to = to + st.substring(i);
+            }
+        }
+        result = result + Integer.valueOf(to);
+        return result;
+    }
+
+    public void getPriceString(WebElement goodPrice){
+        String priceString = goodPrice.getText();
     }
 
 //    public void checkItemNotSponsored(){
