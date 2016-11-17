@@ -15,6 +15,16 @@ public class AmazonSearchResultsPage {
     @FindBy(xpath = "//*[@class='leftNavGoBtn']")
     private WebElement goBtn;
 
+    @FindBy(xpath = ".//*[contains(@id,'result')]//span[contains(text(),'$')]")
+    private WebElement goodPriceSpan;
+
+
+
+
+
+
+
+
     public void setPriceRange(int i, int j){
         String stLow = Integer.toString(i);
         lowPriceField.sendKeys(stLow);
@@ -24,6 +34,10 @@ public class AmazonSearchResultsPage {
 
 
     }
+
+//    public void checkItemNotSponsored(){
+//
+//    }
 
 
 
