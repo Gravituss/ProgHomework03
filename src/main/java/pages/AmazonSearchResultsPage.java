@@ -1,11 +1,20 @@
 package pages;
 
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
 
 public class AmazonSearchResultsPage {
 
+    private WebDriver driver;
+
+    public AmazonSearchResultsPage(WebDriver driver) {
+        PageFactory.initElements(driver, this);
+        this.driver = driver;
+    }
 
 
     @FindBy(id = "low-price")
@@ -45,21 +54,4 @@ public class AmazonSearchResultsPage {
     public void getPriceString(WebElement goodPrice){
         String priceString = goodPrice.getText();
     }
-
-//    public void checkItemNotSponsored(){
-//
-//    }
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
