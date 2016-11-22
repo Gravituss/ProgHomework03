@@ -27,12 +27,12 @@ public class Test1 {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.get("http://amazon.com");
 
-        AmazonMainPage amazonMainPage = PageFactory.initElements(driver, AmazonMainPage.class);
-        //AmazonMainPage amazonMainPage = new AmazonMainPage(driver);
+//        AmazonMainPage amazonMainPage = PageFactory.initElements(driver, AmazonMainPage.class);
+        AmazonMainPage amazonMainPage = new AmazonMainPage(driver);
 
-        AmazonSearchResultsPage amazonSearchResultsPage = PageFactory.initElements(driver,
-                AmazonSearchResultsPage.class);
-        //AmazonSearchResultsPage amazonSearchResultsPage = new AmazonSearchResultsPage(driver);
+//        AmazonSearchResultsPage amazonSearchResultsPage = PageFactory.initElements(driver,
+//                AmazonSearchResultsPage.class);
+        AmazonSearchResultsPage amazonSearchResultsPage = new AmazonSearchResultsPage(driver);
 
         amazonMainPage.searchGood("Google Nexus");
 
